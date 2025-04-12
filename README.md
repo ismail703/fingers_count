@@ -22,6 +22,6 @@ Fingers Count is a real-time computer vision application that uses MediaPipe and
 <hr/>
 
 ## 📬 Contact
-[💼 LinkedIn: ](www.linkedin.com/in/ismail-el-main)
-[🐙 GitHub: ](https://github.com/ismail703)
+[💼 LinkedIn ](www.linkedin.com/in/ismail-el-main)<br/>
+[🐙 GitHub ](https://github.com/ismail703)
 
