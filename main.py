@@ -1,10 +1,8 @@
-import requests 
 import cv2 
 import numpy as np 
 import mediapipe as mp
-import imutils 
 
-url = "http://192.168.1.4:8080/shot.jpg"
+cap = cv2.VideoCapture(0)
 
 mp_hands = mp.solutions.hands
 hands = mp_hands.Hands(
@@ -16,10 +14,10 @@ hands = mp_hands.Hands(
 mp_draw = mp.solutions.drawing_utils
   
 while True: 
-    img_resp = requests.get(url) 
-    img_arr = np.array(bytearray(img_resp.content), dtype=np.uint8) 
-    img = cv2.imdecode(img_arr, -1) 
-    img = imutils.resize(img, width=1000, height=1800) 
+    sucess, img = cap.read()
+
+    if not sucess:
+        print("Error: Could not read frame")
     
     imgRGB = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
     result = hands.process(imgRGB)
